@@ -36,7 +36,27 @@
   .rule-red { height: 2px; background: var(--red); }
   .rule-ticks { height: 7px; background-image: repeating-linear-gradient(90deg, var(--ink) 0 1.5px, transparent 1.5px 8px); opacity: .4; }
 
-  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: clamp(40px, 7vw, 80px) 16px; }
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px, 3vw, 26px); padding: clamp(28px, 6vw, 64px) 16px clamp(40px, 7vw, 80px); }
+
+  .callout {
+    width: 100%; max-width: 640px; display: flex; align-items: center; gap: clamp(14px, 3vw, 22px);
+    padding: 14px clamp(14px, 3vw, 22px) 14px 14px; text-decoration: none; color: var(--ink);
+    background: var(--card); border: 1.5px solid var(--ink); position: relative;
+    box-shadow: 5px 5px 0 var(--red); transition: transform .15s, box-shadow .15s;
+  }
+  .callout:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--red); }
+  .callout:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+  .thumbs { display: flex; flex: none; }
+  .thumbs img { width: clamp(40px, 9vw, 54px); height: auto; aspect-ratio: 4/5; object-fit: cover; border: 1.5px solid var(--ink); }
+  .thumbs img + img { margin-left: -14px; }
+  .thumbs img:nth-child(1) { transform: rotate(-6deg); }
+  .thumbs img:nth-child(3) { transform: rotate(6deg); }
+  .callout-text { flex: 1; min-width: 0; text-align: left; }
+  .callout-tag { display: inline-block; font: 600 10px/1 'Spectral', serif; letter-spacing: .24em; text-transform: uppercase; color: var(--cream); background: var(--red); padding: 4px 7px 3px; }
+  .callout-title { display: block; font: 600 clamp(16px, 2.2vw, 19px)/1.25 'Spectral', serif; margin-top: 7px; }
+  .callout-sub { display: block; font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 3px; }
+  .callout-go { flex: none; font: 600 15px/1 'Spectral', serif; color: var(--red); white-space: nowrap; }
+  @media (max-width: 480px) { .callout-go-label { display: none; } }
   .card {
     width: 100%; max-width: 640px; text-align: center;
     border: 1.5px solid var(--ink); background: var(--card);
@@ -78,6 +98,20 @@
   <div class="rule-ticks"></div>
 
   <main>
+    <a class="callout" href="totes.html">
+      <span class="thumbs" aria-hidden="true">
+        <img src="assets/totes/shop/birds-blooms-cream-green-640.jpg" alt="" width="54" height="68">
+        <img src="assets/totes/shop/kali-navy-640.jpg" alt="" width="54" height="68">
+        <img src="assets/totes/shop/tree-of-life-cream-mustard-640.jpg" alt="" width="54" height="68">
+      </span>
+      <span class="callout-text">
+        <span class="callout-tag">Now available</span>
+        <span class="callout-title">Hand-illustrated totes are here</span>
+        <span class="callout-sub">10 designs in cream &amp; navy · ₹1,499, shipping included</span>
+      </span>
+      <span class="callout-go"><span class="callout-go-label">Shop totes </span>→</span>
+    </a>
+
     <div class="card">
       <img class="logo" src="assets/logo.png" alt="Sundarakala lotus logo" width="84" height="84">
       <h1>Sundarakala</h1>

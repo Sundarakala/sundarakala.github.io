@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Totes · Sundarakala</title>
+<meta name="description" content="Canvas totes printed with Sundarakala’s hand-illustrated Mithila and mandala artwork. ₹1,499 each, shipping included. Order on WhatsApp.">
+<meta property="og:title" content="Totes · Sundarakala">
+<meta property="og:description" content="Canvas totes printed with hand-illustrated Mithila and mandala artwork. ₹1,499, shipping included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sundarakala.com/totes.html">
+<meta property="og:image" content="https://sundarakala.com/assets/totes/shop/kali-cream-mustard.jpg">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Autography'; src: url('assets/autography-wordmark.woff2') format('woff2'); font-display: swap; }
+
+  :root {
+    --cream: #FBF6EE;
+    --card: #FDFAF3;
+    --ink: #1a1310;
+    --body: #4a3d33;
+    --muted: #6b5d4d;
+    --red: #C00A0D;
+    --red-dark: #AC0A0D;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'Spectral', serif; }
+  img { display: block; max-width: 100%; height: auto; }
+
+  .rule-red { height: 2px; background: var(--red); }
+  .rule-ticks { height: 7px; background-image: repeating-linear-gradient(90deg, var(--ink) 0 1.5px, transparent 1.5px 8px); opacity: .4; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  header { text-align: center; padding: clamp(36px, 6vw, 64px) 0 0; }
+  .home { display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; }
+  .logo { width: clamp(52px, 8vw, 68px); height: auto; }
+  .wordmark { font-family: 'Autography', cursive; font-weight: 400; color: var(--red); font-size: clamp(40px, 8vw, 60px); line-height: .9; margin-top: 10px; padding-bottom: 6px; }
+  h1 { font: 500 11px/1.4 'Spectral', serif; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin: 10px 0 0; }
+  .divider { width: 54px; height: 2px; background: var(--red); margin: clamp(20px, 3vw, 28px) auto; }
+  .lede { font-size: clamp(16px, 2vw, 19px); line-height: 1.7; color: var(--body); max-width: 560px; margin: 0 auto; }
+  .price-note { display: inline-block; margin: 20px 0 0; padding: 9px 18px; border: 1.5px solid var(--ink); border-radius: 999px; font: 600 14px/1 'Spectral', serif; letter-spacing: .03em; }
+  .price-note b { color: var(--red); font-weight: 600; }
+
+  .grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: clamp(36px, 5vw, 56px) 0 0; }
+  @media (min-width: 520px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+  .product { display: flex; flex-direction: column; background: var(--card); border: 1.5px solid var(--ink); }
+  .photo { display: block; border-bottom: 1.5px solid var(--ink); overflow: hidden; }
+  .photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform .3s ease; }
+  .photo:hover img { transform: scale(1.03); }
+  .photo:focus-visible { outline: 2px solid var(--red); outline-offset: -4px; }
+  .meta { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 14px 16px 0; flex: 1; }
+  .name { font: 600 17px/1.3 'Spectral', serif; margin: 0; }
+  .sep { color: var(--red); }
+  .colour { font-weight: 400; color: var(--body); }
+  .price { font: 600 16px/1.3 'Spectral', serif; color: var(--red); margin: 0; white-space: nowrap; }
+
+  .buy {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    margin: 14px 16px 16px; padding: 12px 18px; border-radius: 999px;
+    border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none;
+    font: 600 14px/1 'Spectral', serif; letter-spacing: .03em;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .buy:hover { background: var(--red); border-color: var(--red); color: var(--cream); }
+  .buy:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+  .buy svg { flex: none; }
+
+  /* Sold out: add class="sold-out" to an <article class="product"> */
+  .sold-out .photo { position: relative; }
+  .sold-out .photo img { filter: grayscale(.7); opacity: .7; }
+  .sold-out .photo:hover img { transform: none; }
+  .sold-out .photo::after {
+    content: "Sold out"; position: absolute; left: -15%; right: -15%; top: 50%;
+    transform: translateY(-50%) rotate(-14deg);
+    background: var(--red); color: var(--cream); text-align: center;
+    font: 600 clamp(15px, 2vw, 18px)/1 'Spectral', serif; letter-spacing: .32em; text-transform: uppercase;
+    padding: 13px 0 12px; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink);
+    box-shadow: inset 0 3px 0 var(--cream), inset 0 -3px 0 var(--cream), 0 6px 18px rgba(26, 19, 16, .18);
+  }
+  .sold-out .price { color: var(--muted); text-decoration: line-through; }
+  .sold-out .buy { color: var(--muted); border-color: var(--muted); border-style: dashed; cursor: default; }
+  .sold-out .buy:hover { background: none; color: var(--muted); border-color: var(--muted); }
+
+  .after { text-align: center; margin: clamp(40px, 6vw, 64px) 0 0; }
+  .after p { font-style: italic; color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 auto; max-width: 520px; }
+  .after a { color: var(--red); }
+
+  footer { margin-top: clamp(40px, 6vw, 64px); }
+  footer p { font-size: 12px; line-height: 1.4; color: var(--muted); text-align: center; margin: 0; padding: 18px 16px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="rule-red"></div>
+<div class="rule-ticks"></div>
+
+<div class="wrap">
+  <header>
+    <a class="home" href="./" aria-label="Sundarakala home">
+      <img class="logo" src="assets/logo.png" alt="" width="68" height="68">
+      <span class="wordmark">Sundarakala</span>
+    </a>
+    <h1>Totes · Hand-illustrated folk art</h1>
+    <div class="divider"></div>
+    <p class="lede">Sturdy canvas totes printed with Prasannavika’s original Mithila and mandala illustrations, in cream or navy with bright cotton straps.</p>
+    <p class="price-note"><b>₹1,499</b> each · shipping included</p>
+  </header>
+
+  <main>
+    <!-- To mark a tote as sold out, change <article class="product"> to <article class="product sold-out"> -->
+    <section class="grid" aria-label="20 totes">
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/mithila-muse-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/mithila-muse-cream-640.jpg" srcset="assets/totes/shop/mithila-muse-cream-640.jpg 640w, assets/totes/shop/mithila-muse-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Mithila Muse · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Mithila Muse <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Mithila%20Muse%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/mithila-muse-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/mithila-muse-navy-640.jpg" srcset="assets/totes/shop/mithila-muse-navy-640.jpg 640w, assets/totes/shop/mithila-muse-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Mithila Muse · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Mithila Muse <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Mithila%20Muse%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/golden-fish-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/golden-fish-cream-640.jpg" srcset="assets/totes/shop/golden-fish-cream-640.jpg 640w, assets/totes/shop/golden-fish-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Golden Fish · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Golden Fish <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Golden%20Fish%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/golden-fish-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/golden-fish-navy-640.jpg" srcset="assets/totes/shop/golden-fish-navy-640.jpg 640w, assets/totes/shop/golden-fish-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Golden Fish · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Golden Fish <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Golden%20Fish%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/fish-pond-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/fish-pond-cream-640.jpg" srcset="assets/totes/shop/fish-pond-cream-640.jpg 640w, assets/totes/shop/fish-pond-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Fish Pond · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Fish Pond <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Fish%20Pond%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/fish-pond-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/fish-pond-navy-640.jpg" srcset="assets/totes/shop/fish-pond-navy-640.jpg 640w, assets/totes/shop/fish-pond-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Fish Pond · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Fish Pond <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Fish%20Pond%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/birds-blooms-cream-green.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/birds-blooms-cream-green-640.jpg" srcset="assets/totes/shop/birds-blooms-cream-green-640.jpg 640w, assets/totes/shop/birds-blooms-cream-green.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Birds &amp; Blooms · Cream &amp; Green tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Birds &amp; Blooms <span class="sep">·</span> <span class="colour">Cream &amp; Green</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Birds%20%26%20Blooms%20%C2%B7%20Cream%20%26%20Green%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/birds-blooms-cream-blue.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/birds-blooms-cream-blue-640.jpg" srcset="assets/totes/shop/birds-blooms-cream-blue-640.jpg 640w, assets/totes/shop/birds-blooms-cream-blue.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Birds &amp; Blooms · Cream &amp; Blue tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Birds &amp; Blooms <span class="sep">·</span> <span class="colour">Cream &amp; Blue</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Birds%20%26%20Blooms%20%C2%B7%20Cream%20%26%20Blue%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/birds-blooms-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/birds-blooms-navy-640.jpg" srcset="assets/totes/shop/birds-blooms-navy-640.jpg 640w, assets/totes/shop/birds-blooms-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Birds &amp; Blooms · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Birds &amp; Blooms <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Birds%20%26%20Blooms%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/tree-of-life-cream-blue.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/tree-of-life-cream-blue-640.jpg" srcset="assets/totes/shop/tree-of-life-cream-blue-640.jpg 640w, assets/totes/shop/tree-of-life-cream-blue.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Tree of Life · Cream &amp; Blue tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Tree of Life <span class="sep">·</span> <span class="colour">Cream &amp; Blue</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Tree%20of%20Life%20%C2%B7%20Cream%20%26%20Blue%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/tree-of-life-cream-mustard.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/tree-of-life-cream-mustard-640.jpg" srcset="assets/totes/shop/tree-of-life-cream-mustard-640.jpg 640w, assets/totes/shop/tree-of-life-cream-mustard.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Tree of Life · Cream &amp; Mustard tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Tree of Life <span class="sep">·</span> <span class="colour">Cream &amp; Mustard</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Tree%20of%20Life%20%C2%B7%20Cream%20%26%20Mustard%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/tree-of-life-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/tree-of-life-navy-640.jpg" srcset="assets/totes/shop/tree-of-life-navy-640.jpg 640w, assets/totes/shop/tree-of-life-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Tree of Life · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Tree of Life <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Tree%20of%20Life%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/rose-vine-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/rose-vine-cream-640.jpg" srcset="assets/totes/shop/rose-vine-cream-640.jpg 640w, assets/totes/shop/rose-vine-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Rose Vine · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Rose Vine <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Rose%20Vine%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/rose-vine-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/rose-vine-navy-640.jpg" srcset="assets/totes/shop/rose-vine-navy-640.jpg 640w, assets/totes/shop/rose-vine-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Rose Vine · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Rose Vine <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Rose%20Vine%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/kali-cream-mustard.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/kali-cream-mustard-640.jpg" srcset="assets/totes/shop/kali-cream-mustard-640.jpg 640w, assets/totes/shop/kali-cream-mustard.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Kali · Cream &amp; Mustard tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Kali <span class="sep">·</span> <span class="colour">Cream &amp; Mustard</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Kali%20%C2%B7%20Cream%20%26%20Mustard%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/kali-cream-green.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/kali-cream-green-640.jpg" srcset="assets/totes/shop/kali-cream-green-640.jpg 640w, assets/totes/shop/kali-cream-green.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Kali · Cream &amp; Green tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Kali <span class="sep">·</span> <span class="colour">Cream &amp; Green</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Kali%20%C2%B7%20Cream%20%26%20Green%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/kali-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/kali-navy-640.jpg" srcset="assets/totes/shop/kali-navy-640.jpg 640w, assets/totes/shop/kali-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Kali · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Kali <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Kali%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/crimson-tree-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/crimson-tree-cream-640.jpg" srcset="assets/totes/shop/crimson-tree-cream-640.jpg 640w, assets/totes/shop/crimson-tree-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Crimson Tree · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Crimson Tree <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Crimson%20Tree%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/day-night-cream.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/day-night-cream-640.jpg" srcset="assets/totes/shop/day-night-cream-640.jpg 640w, assets/totes/shop/day-night-cream.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Day &amp; Night · Cream tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Day &amp; Night <span class="sep">·</span> <span class="colour">Cream</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Day%20%26%20Night%20%C2%B7%20Cream%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+      <article class="product">
+        <a class="photo" href="assets/totes/shop/lotus-mandala-navy.jpg" target="_blank" rel="noopener"><img src="assets/totes/shop/lotus-mandala-navy-640.jpg" srcset="assets/totes/shop/lotus-mandala-navy-640.jpg 640w, assets/totes/shop/lotus-mandala-navy.jpg 1200w" sizes="(min-width: 900px) 340px, (min-width: 520px) 45vw, 92vw" width="640" height="800" loading="lazy" alt="Lotus Mandala · Navy tote bag with a hand-illustrated folk art print"></a>
+        <div class="meta">
+          <h2 class="name">Lotus Mandala <span class="sep">·</span> <span class="colour">Navy</span></h2>
+          <p class="price">₹1,499</p>
+        </div>
+        <a class="buy" href="https://wa.me/919840288010?text=Hey%2C%20I%27d%20like%20to%20buy%20the%20Lotus%20Mandala%20%C2%B7%20Navy%20tote" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg> Buy on WhatsApp</a>
+      </article>
+    </section>
+
+    <div class="after">
+      <p>Tap <em>Buy on WhatsApp</em> and we’ll take it from there. Questions about a design, or want several? <a href="https://wa.me/919840288010" target="_blank" rel="noopener">Just say hello</a>.</p>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="rule-ticks"></div>
+  <div class="rule-red"></div>
+  <p>© 2026 <a href="./">Sundarakala</a> · Indian folk art, from Madras</p>
+</footer>
+<script>
+  // Sold-out cards: turn the WhatsApp button into a disabled "Sold out" label.
+  document.querySelectorAll('.product.sold-out .buy').forEach(function (a) {
+    a.removeAttribute('href');
+    a.setAttribute('aria-disabled', 'true');
+    a.textContent = 'Sold out';
+  });
+</script>
+</body>
+</html>
