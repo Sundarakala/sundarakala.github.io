@@ -5,3 +5,7 @@
 sundarakala-site.zip
 brief.txt
 DESIGN_BRIEF.md
+
+# Full licensed font file: keep out of the public repo.
+# The site uses a subset (assets/autography-wordmark.woff2) with only the wordmark glyphs.
+assets/Autography.otf
