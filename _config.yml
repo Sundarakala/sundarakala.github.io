@@ -1,0 +1,5 @@
+# Keep repo docs and tools off the published site
+exclude:
+  - README.md
+  - CLAUDE.md
+  - tools
