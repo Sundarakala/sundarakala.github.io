@@ -35,7 +35,9 @@ plain HTML files with inline CSS and a little inline JS. Pushing to `master` dep
 
 - Price **₹1,499 including shipping** for every tote.
 - Card title format: **`Name · Colour`**. When one design has two cream versions, the strap colour goes into the
-  colour ("Cream & Green"). Both colours of a design sit next to each other in the grid.
+  colour ("Cream & Green").
+- **Grid order:** available totes first, then all sold-out totes together at the end (the owner asked for this).
+  Within each group, keep the colours of one design next to each other.
 - The current names (Mithila Muse, Golden Fish, Kali, …) were chosen by Claude as placeholders. The owner may
   rename them. To rename, update the `<h2 class="name">`, the image `alt`, **and** the WhatsApp message in that
   card. The file slug can stay as it is.
@@ -43,7 +45,8 @@ plain HTML files with inline CSS and a little inline JS. Pushing to `master` dep
   `Hey, I'd like to buy the <Name> · <Colour> tote`.
 - **Sold out:** change `<article class="product">` to `<article class="product sold-out">`. CSS adds the diagonal
   banner, strikes through the price and greys the photo. JS turns the buy button into a disabled "Sold out"
-  label. The lightbox picks it up automatically.
+  label. The lightbox picks it up automatically. Also **move the whole `<article>` to the sold-out group** at
+  the end of the grid (the lightbox follows DOM order).
 - The lightbox is a native `<dialog>` built from the cards at runtime (photo `href` = full image, plus cloned
   name, price and buy button). It handles arrows, swipe and Esc, and focus goes back to the card on close.
   Without JS, the photo link still opens the image.
@@ -57,7 +60,8 @@ plain HTML files with inline CSS and a little inline JS. Pushing to `master` dep
    colour-corrects, centres the tote on a 4:5 canvas tinted with its strap colour (the owner chose
    "strap tint"), writes both sizes to `assets/totes/shop/`, and prints the card HTML on stdout.
    The first run downloads a ~1 GB model.
-3. Paste the card into the `.grid` section next to its sibling colour. Update `aria-label="N totes"` on the grid,
+3. Paste the card into the `.grid` section, in the available group, next to its sibling colour if that one is
+   also available. Update `aria-label="N totes"` on the grid,
    and the "10 designs" count in the `index.html` callout if the number of designs changed.
 4. Look at the output image before committing. If a tote has a lot of white close to the floor colour, check
    the edges at full size.
